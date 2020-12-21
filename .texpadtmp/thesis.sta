@@ -1,0 +1,14 @@
+\standalonepreambles
+\subpreamble{Bia_ngoai.tex}
+
+\endsubpreamble
+\subpreamble{Bia_trong.tex}
+
+\endsubpreamble
+\subpreamble{chapters/bai-1.tex}
+\usepackage [subpreambles = true]{standalone}\usepackage {tikz}\usepackage {circuitikz}\usetikzlibrary {patterns,decorations.pathmorphing,positioning}
+\endsubpreamble
+\subpreamble{chapters/bai-2.tex}
+\usepackage [subpreambles = true]{standalone}\usepackage {tikz}\usepackage {circuitikz}\usetikzlibrary {patterns,decorations.pathmorphing,positioning}\usepackage {xfrac}
+\endsubpreamble
+\endstandalonepreambles

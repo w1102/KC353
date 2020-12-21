@@ -1,0 +1,24 @@
+\begin{tikzpicture}[every node/.style={outer sep=0pt},thick,
+ mass/.style={draw,thick},
+ spring/.style={thick,decorate,decoration={zigzag,pre length=0.3cm,post
+ length=0.3cm,segment length=6}},
+ ground/.style={fill,pattern=north east lines,draw=none,minimum
+ width=0.75cm,minimum height=0.3cm},
+ dampic/.pic={\fill[white] (-0.1,-0.3) rectangle (0.3,0.3);
+ \draw (-0.3,0.3) -| (0.3,-0.3) -- (-0.3,-0.3);
+ \draw[line width=1mm] (-0.1,-0.3) -- (-0.1,0.3);}]
+
+
+ 
+  
+  \node[mass,minimum width=1.5cm,minimum height=2cm] (m2)  {$m_1$} ;
+  
+  
+\draw [-latex,ultra thick] ([yshift=0.65cm]m2.east)  -- +(1cm,0cm) node[midway,below=1mm] (f1) {$F_1$};
+\draw [-latex,ultra thick] ([yshift=-0.65cm]m2.east)  -- +(1cm,0cm) node[midway,below=1mm] (fdh2) {$F_{dh2}$};
+\draw [-latex,ultra thick] ([yshift=0.65cm]m2.west)  -- +(-1cm,0cm) node[midway,below=1mm] (fdh1) {$F_{dh1}$};
+
+
+
+
+\end{tikzpicture}

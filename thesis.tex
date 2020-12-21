@@ -1,0 +1,72 @@
+\documentclass[a4paper,13pt,oneside]{report}
+\usepackage[subpreambles = true]{standalone}
+
+\usepackage{graphicx}
+\usepackage{fancyhdr}% Dùng để tạo header và footer
+\usepackage{emptypage}% Không đánh số trang, header, footer với các trang trắng
+
+
+%set font chữ time new roman
+\usepackage[utf8]{inputenc}
+\usepackage[utf8]{vietnam}
+\usepackage{times}
+%-------------------------
+\usepackage{scrextend}
+\changefontsizes{13pt}
+
+\renewcommand{\baselinestretch}{1.2}%giản dòng 1.5 line
+\setlength{\parindent}{0pt}%ko thụt đầu dòng
+
+
+%căn lề
+\usepackage[paperheight=297mm, paperwidth=210mm,top=3cm,inner=3cm,outer=2cm,bottom=2.5cm,headheight=120pt]{geometry}
+%-----------------
+
+
+
+%gói ký tự toán
+\usepackage{upgreek}%ký tự uF
+\usepackage{mathtools}%Package hàm cases viết hệ pt
+\usepackage{latexsym, amsmath, amsxtra,amssymb, amscd} 
+%-----------------
+
+
+\title{Bài tập lớn KC353}% Tiêu đề luận văn
+\author{Trần Nhựt Quang}% Người thực hiện 
+
+% Header và footer 
+\pagestyle{fancy}
+\fancyhf{}
+
+% Header và footer nếu in 1 mặt
+\rhead{\fontsize{10}{12} \selectfont Giảng viên:\\TS. Nguyễn Hữu Cường}% Header bên phải
+\lhead{\fontsize{10}{12} \selectfont Bài tập lớn\\KC353}% Header bên trái
+\rfoot{\fontsize{10}{12} \selectfont \thepage}% Footer bên phải
+\lfoot{\fontsize{10}{12} \selectfont Trần Nhựt Quang - B1907058}% Footer bên trái
+
+
+\begin{document}
+	
+	\include{Bia_ngoai}
+	\include{Bia_trong}
+	
+	\pagenumbering{roman}% Kiểu số trang: i, ii, iii, iv, v,...
+
+	
+	\tableofcontents%mục lục
+	\listoffigures%danh sách hình
+	\listoftables%danh sách bảng
+	\pagebreak
+	
+	
+	\pagenumbering{arabic}% Kiểu số trang: 1, 2, 3,...
+
+	\chapter{Bài 1}
+	\input{chapters/bai-1}
+	\pagebreak
+	
+	\chapter{Bài 2}
+	\input{chapters/bai-2}
+	
+	
+\end{document}

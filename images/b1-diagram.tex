@@ -1,0 +1,52 @@
+\begin{tikzpicture}[every node/.style={outer sep=0pt},thick,
+ mass/.style={draw,thick},
+ spring/.style={thick,decorate,decoration={zigzag,pre length=0.3cm,post
+ length=0.3cm,segment length=6}},
+ ground/.style={fill,pattern=north east lines,draw=none,minimum
+ width=0.75cm,minimum height=0.3cm},
+ dampic/.pic={\fill[white] (-0.1,-0.3) rectangle (0.3,0.3);
+ \draw (-0.3,0.3) -| (0.3,-0.3) -- (-0.3,-0.3);
+ \draw[line width=1mm] (-0.1,-0.3) -- (-0.1,0.3);}]
+  \node[mass,minimum width=1.5cm,minimum height=2cm] (m1) {$m_1$} ;
+  
+  \node[mass,minimum width=1.5cm,minimum height=4cm,right=2cm of  m1, yshift = 1cm] (m2)  {$m_2$} ;
+  
+  
+\node[left=-0.75cm of m1,minimum width=1.5mm,minimum height=1cm,yshift =-1.5cm] (l1){};
+\draw (l1.north east) -- (l1.south east);
+\draw [-latex,ultra thick] ([yshift=-0.47cm]l1.east)  -- +(1cm,0cm) node[midway,below=1mm] (x1) {$X_1$};
+
+\node[left=-0.75cm of m2,minimum width=1.5mm,minimum height=1cm,yshift =-2.5cm] (l2){};
+\draw (l2.north east) -- (l2.south east);
+\draw [-latex,ultra thick] ([yshift=-0.47cm]l2.east)  -- +(1cm,0cm) node[midway,below=1mm] (x2) {$X_2$};
+
+
+
+\node[left=2cm of m1,ground,minimum width=3mm,minimum height=5cm,yshift = 1cm] (g1){};
+\draw (g1.north east) -- (g1.south east);
+
+
+\node[right=-3.5cm of m1,ground,minimum width=8cm,minimum height=3mm,yshift = -1.6cm] (g2){};
+\draw ([yshift=1.4mm]g2.west) -- ([yshift=1.4mm]g2.east);
+
+
+ %\draw[spring] ([yshift=-0.40cm]g1.east) coordinate(aux) -- (m1.west|-aux) node[midway,above=1mm]{$k_1$};
+ %\draw[spring] ([yshift=-3mm]m1.east) coordinate(aux) -- (m2.west|-aux) node[midway,above=1mm]{$k_2$};
+ %\draw[spring] ([yshift=1cm]g1.east) coordinate(aux) -- (m2.west|-aux) node[midway,above=1mm]{$k_3$};
+   
+\draw[decoration={aspect=0.5, amplitude=1.5mm,segment length=2mm,coil},decorate] ([yshift=-0.40cm]g1.east) coordinate(aux) -- (m1.west|-aux) node[midway,above=1mm]{\small $k_1$};
+\draw[decoration={aspect=0.5, amplitude=1.5mm,segment length=2mm,coil},decorate] ([yshift=-3mm]m1.east) coordinate(aux) -- (m2.west|-aux) node[midway,above=1mm]{\small $k_2$};
+\draw[decoration={aspect=0.5, amplitude=1.5mm,segment length=2mm,coil},decorate] ([yshift=1cm]g1.east) coordinate(aux) -- (m2.west|-aux) node[midway,above=1mm]{\small $k_3$};
+
+
+\draw [-latex,ultra thick] ([yshift=6mm]m1.east)  -- +(1cm,0cm) node[midway,below=-6mm] (F1) {$F_1$};
+\draw [-latex,ultra thick] ([yshift=1cm]m2.east)  -- +(1cm,0cm) node[midway,below=-6mm] (F2) {$F_2$};
+
+  \draw ([yshift=-1.35cm]g1.east) coordinate(aux')
+   -- (m1.west|-aux') pic[midway]{dampic} node[midway,below=3mm]{$b_1$};
+     %(m1.east|-aux') -- (m2.west|-aux') pic[midway]{dampic} node[midway,below=3mm]{$c_2$}
+     %(m2.east|-aux') -- (ma.west|-aux') pic[midway]{dampic} node[midway,below=3mm]{$c_a$};
+
+\tikzstyle{spring}=[thick,decorate,decoration={zigzag,pre length=0.1cm,post
+  length=0.1cm,segment length=6}]
+\end{tikzpicture}

@@ -1,0 +1,28 @@
+\begin{circuitikz} 
+%longpot/.style = {pR, resistors/scale=0.75,
+%3 resistors/width=1.6, resistors/zigs=6}]
+
+ 
+\draw (0, 0) node[left=1ex, name=dc_in] {$V_i$} %VI      
+to[short, o-] (1, 0);
+                         
+\draw (1,0)
+to[inductor, l={$L_1$}] (4,0)
+to[inductor, l=$L_2$] (7,0);
+
+\draw (8.5, 0) node[left=1ex, name=dc_in] [xshift=1cm]{$V_o$} %VI      
+to[short, o-] (7, 0);
+
+\draw (4,0) to[capacitor, l=$C$] (4,-3);
+\draw (7,0) to[R, l=$R$] (7,-3);
+\draw (0,-3) to (8.5,-3);
+
+%\draw (0,0)  to[inductor, l=$L_1$] (4,0)
+%to[inductor, l=$L_2$] (12,0);
+%
+%\draw (4,0)  to[capacitor, l=$C$] (4,-4);
+%\draw (10,0)  to[R, l=$R$] (10,-4);
+
+
+ ;
+\end{circuitikz}
